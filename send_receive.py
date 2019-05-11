@@ -2,6 +2,8 @@ import socket
 import struct
 import subprocess as sp
 from threading import Thread
+import random as r
+import time
 
 hosts = {}  # {hostname: ip}
 multicast_group = '224.3.29.71'
@@ -20,6 +22,8 @@ sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
 
 
 def send_message():
+    x = r.randrange(10, 20)
+    time.sleep(x)
     try:
 
         # Send data to the multicast group
@@ -50,9 +54,7 @@ def receive_message():
 def main():
     h1 = Thread(target=receive_message)
     h1.start()
-    while True:
-        if input('Y/N').strip().lower() == 'y':
-            send_message()
+    send_message()
 
 
 main()
