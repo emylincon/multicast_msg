@@ -11,7 +11,6 @@ server_address = ('', 10000)
 
 # Create the socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sock.settimeout(0.2)
 # Bind to the server address
 sock.bind(server_address)
 # Tell the operating system to add the socket to the multicast group
