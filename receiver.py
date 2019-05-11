@@ -1,6 +1,5 @@
 import socket
 import struct
-import sys
 
 multicast_group = '224.3.29.71'
 server_address = ('', 10000)
