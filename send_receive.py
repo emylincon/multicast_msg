@@ -53,13 +53,16 @@ def receive_message():
 
 def main():
     global mec
-
-    mec = int(input('Number of MECs: ').strip())
-    print('\nCompiling MEC Details')
-    h1 = Thread(target=receive_message)
-    h1.start()
-    if input('Y/N: ').strip().lower() == 'n':
-        send_message()
+    try:
+        mec = int(input('Number of MECs: ').strip())
+        print('\nCompiling MEC Details')
+        h1 = Thread(target=receive_message)
+        h1.start()
+        if input('Y/N: ').strip().lower() == 'n':
+            send_message()
+    except KeyboardInterrupt:
+        print('\nProgramme Terminated')
+        exit(0)
 
 
 main()
