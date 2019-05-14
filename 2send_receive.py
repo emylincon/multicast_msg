@@ -21,8 +21,6 @@ sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
 
 
 def send_message():
-    #x = r.randrange(10, 20)
-    #time.sleep(x)
     _multicast_group = ('224.3.29.71', 10000)
     try:
 
