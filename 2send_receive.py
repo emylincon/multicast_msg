@@ -55,7 +55,7 @@ def main():
         print('\nCompiling MEC Details')
         h1 = Thread(target=receive_message)
         h1.start()
-        if input('Y/N: ').strip().lower() == 'n':
+        if input('Type "Y" to Start: ').strip().lower() == 'y':
             send_message()
     except KeyboardInterrupt:
         print('\nProgramme Terminated')
