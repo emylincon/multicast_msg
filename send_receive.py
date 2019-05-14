@@ -21,8 +21,8 @@ sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
 
 
 def send_message():
-    x = r.randrange(10, 20)
-    time.sleep(x)
+    #x = r.randrange(10, 20)
+    #time.sleep(x)
     _multicast_group = ('224.3.29.71', 10000)
     try:
 
@@ -54,7 +54,8 @@ def receive_message():
 def main():
     h1 = Thread(target=receive_message)
     h1.start()
-    send_message()
+    if input('Y/N: ').strip().lower() == 'n':
+        send_message()
 
 
 main()
