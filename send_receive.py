@@ -43,15 +43,19 @@ def message():
 
 def receive_message():
     while True:
-        print('\nwaiting to receive message')
         data, address = sock.recvfrom(1024)
 
-        print('received %s bytes from %s' % (len(data), address))
+        # print('received %s bytes from %s' % (len(data), address))
         hosts[data.decode()] = address[0]
-        print(hosts)
+        if len(hosts) == mec:
+            print('MEC Details: ', hosts)
 
 
 def main():
+    global mec
+
+    mec = int(input('Number of MECs: ').strip())
+    print('\nCompiling MEC Details')
     h1 = Thread(target=receive_message)
     h1.start()
     if input('Y/N: ').strip().lower() == 'n':
