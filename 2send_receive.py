@@ -2,8 +2,7 @@ import socket
 import struct
 import subprocess as sp
 from threading import Thread
-import random as r
-import time
+
 
 hosts = {}  # {hostname: ip}
 multicast_group = '224.3.29.71'
