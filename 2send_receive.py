@@ -51,7 +51,7 @@ def receive_message():
 def main():
     global mec
     try:
-        mec = int(input('Number of MECs: ').strip())
+        mec = int(input('Number of Nodes: ').strip())
         print('\nCompiling MEC Details')
         h1 = Thread(target=receive_message)
         h1.start()
