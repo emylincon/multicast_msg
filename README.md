@@ -8,5 +8,11 @@
 git clone https://github.com/emylincon/multicast_msg.git
 cd multicast_msg
 python3 2send_receive.py
-Number of MECs: 3
+Number of Nodes: 3
 ```
+
+* do the same for all participating nodes then after do the following..
+
+``
+Type "Y" to Start: y
+``
