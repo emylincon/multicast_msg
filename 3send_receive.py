@@ -18,6 +18,8 @@ group = socket.inet_aton(multicast_group)
 mreq = struct.pack('4sL', group, socket.INADDR_ANY)
 sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
 
+t_control = 1
+
 
 def ip_address():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -49,6 +51,8 @@ def message():
 
 def receive_message():
     while True:
+        if t_control == 0:
+            break
         data, address = sock.recvfrom(1024)
 
         if data.decode()[:7] == '.../...':
