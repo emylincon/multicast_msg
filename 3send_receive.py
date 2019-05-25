@@ -51,8 +51,6 @@ def message():
 
 def receive_message():
     while True:
-        if t_control == 0:
-            break
         data, address = sock.recvfrom(1024)
 
         if data.decode()[:7] == '.../...':
