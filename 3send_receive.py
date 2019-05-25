@@ -51,9 +51,9 @@ def receive_message():
     while True:
         data, address = sock.recvfrom(1024)
 
-        if data.decode()[7:] == '.../...':
+        if data.decode()[:7] == '.../...':
             # print('received %s bytes from %s' % (len(data), address))
-            hosts[address[0]] = data.decode()[:7]
+            hosts[address[0]] = data.decode()[7:]
             if len(hosts) == mec:
                 print('MEC Details: ', hosts)
         else:
