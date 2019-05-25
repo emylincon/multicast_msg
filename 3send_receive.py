@@ -60,14 +60,14 @@ def receive_message():
                 print('MEC Details: ', hosts)
         else:
             if address[0] != ip_address():
-                print('{}: {}'.format(hosts[address[0]], data.decode()))
+                print(data.decode())
 
 
 def messaging_nodes():
     try:
 
         while True:
-            msg = input('{}: '.format(hostname))
+            msg = input()
             if (msg == '') or (msg == ' '):
                 print('\n')
             else:
