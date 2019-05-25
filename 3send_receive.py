@@ -85,6 +85,7 @@ def main():
         h1.start()
         if input('Send Hello Message (Y/N): ').strip().lower() == 'y':
             send_message('.../...')
+        messaging_nodes()
 
     except KeyboardInterrupt:
         print('\nProgramme Terminated')
