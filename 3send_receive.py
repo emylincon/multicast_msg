@@ -62,9 +62,11 @@ def receive_message():
 
 
 def messaging_nodes():
-    try:
+    global h1
 
-        while True:
+    while True:
+
+        try:
             msg = input()
             if (msg == '') or (msg == ' '):
                 print('\n')
@@ -72,8 +74,10 @@ def messaging_nodes():
                 # print('{}: {}'.format(hostname, msg))
                 send_message(msg)
 
-    except KeyboardInterrupt:
-        print('Programme Terminated')
+        except KeyboardInterrupt:
+            print('Programme Terminated')
+            h1.stop()
+            break
 
 
 def main():
