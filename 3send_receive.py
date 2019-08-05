@@ -71,7 +71,7 @@ def messaging_nodes():
             if (msg == '') or (msg == ' '):
                 print('\n')
             else:
-                # print('{}: {}'.format(hostname, msg))
+                # print('{}: {}'.format(hostname, msg_))
                 send_message(msg)
 
         except Exception as e:
