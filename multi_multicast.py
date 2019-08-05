@@ -18,6 +18,8 @@ group = socket.inet_aton(multicast_group)
 mreq = struct.pack('4sL', group, socket.INADDR_ANY)
 sock.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP, mreq)
 
+t_control = 1
+
 
 def ip_address():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -62,11 +64,9 @@ def receive_message():
 
 
 def messaging_nodes():
-    global h1
+    try:
 
-    while True:
-
-        try:
+        while True:
             msg = input()
             if (msg == '') or (msg == ' '):
                 print('\n')
@@ -74,14 +74,12 @@ def messaging_nodes():
                 # print('{}: {}'.format(hostname, msg))
                 send_message(msg)
 
-        except Exception as e:
-            print(e)
+    except KeyboardInterrupt:
+        print('Programme Terminated')
 
 
 def main():
     global mec
-    global h1
-
     try:
         mec = int(input('Number of Nodes: ').strip())
         print('\nCompiling All Neighbours Details')
@@ -93,7 +91,6 @@ def main():
 
     except KeyboardInterrupt:
         print('\nProgramme Terminated')
-        h1.stop()
         exit(0)
 
 
