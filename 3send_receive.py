@@ -75,7 +75,7 @@ def messaging_nodes():
                 send_message(msg)
 
         except Exception as e:
-            print(e)
+            print('Programme Terminated')
 
 
 def main():
