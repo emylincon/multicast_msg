@@ -94,7 +94,6 @@ def main():
 
     except KeyboardInterrupt:
         print('\nProgramme Terminated')
-        #h1.stop()
         exit(0)
 
 
