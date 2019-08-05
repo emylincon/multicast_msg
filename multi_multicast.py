@@ -123,6 +123,8 @@ def messaging_nodes():
 
 def main():
     global mec
+    first_group()
+    second_group()
     try:
         mec = int(input('Number of Nodes: ').strip())
         print('\nCompiling All Neighbours Details')
