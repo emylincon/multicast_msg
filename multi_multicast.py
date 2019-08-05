@@ -28,7 +28,7 @@ def second_group():
     global sock2
 
     multicast_group = '224.5.5.55'
-    server_address = ('', 10000)
+    server_address = ('', 20000)
 
     # Create the socket
     sock2 = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -63,7 +63,7 @@ def send_message(msg):
 
 
 def send_message2(msg):
-    _multicast_group = ('224.5.5.55', 10000)
+    _multicast_group = ('224.5.5.55', 20000)
     try:
         sock2.sendto(str.encode(msg), _multicast_group)
 
