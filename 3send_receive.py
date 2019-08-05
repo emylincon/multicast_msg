@@ -86,6 +86,7 @@ def main():
         mec = int(input('Number of Nodes: ').strip())
         print('\nCompiling All Neighbours Details')
         h1 = Thread(target=receive_message)
+        h1.daemon = True
         h1.start()
         if input('Send Hello Message (Y/N): ').strip().lower() == 'y':
             send_message('.../...')
